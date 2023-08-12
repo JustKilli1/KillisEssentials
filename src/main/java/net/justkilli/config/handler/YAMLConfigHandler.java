@@ -6,7 +6,10 @@ import net.justkilli.config.values.ConfigValue;
 import org.simpleyaml.configuration.file.YamlFile;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.StringJoiner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class YAMLConfigHandler implements IConfigHandler {
 
@@ -74,13 +77,12 @@ public class YAMLConfigHandler implements IConfigHandler {
     @Override
     public <T> void setComments(ConfigValue<T> value) throws IOException {
         if(value.parameters().length == 0) return;
-        String header = "Parameter Options:";
-        StringJoiner joiner = new StringJoiner("\n");
-        joiner.add(header);
-        for(ConfigParameter parameter : value.parameters()) {
-            joiner.add(parameter.getParameterDescription());
-        }
-        config.setComment(value.path(), joiner.toString());
+    String comments = Stream.concat(
+                                    Stream.of("Parameter Options:"), Arrays.stream(value.parameters())
+                                    .map(ConfigParameter::getParameterDescription)
+                                    )
+                            .collect(Collectors.joining("\n"));
+        config.setComment(value.path(), comments);
     }
 
     /**
