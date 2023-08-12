@@ -1,7 +1,9 @@
 package net.justkilli.base;
 
+import net.justkilli.config.ConfigUtils;
 import net.justkilli.config.handler.YAMLConfigHandler;
-import net.justkilli.config.IConfigHandler;
+import net.justkilli.config.handler.IConfigHandler;
+import net.justkilli.config.values.ConfigParameter;
 import net.justkilli.config.values.ConfigValue;
 
 import java.io.IOException;
@@ -29,10 +31,12 @@ public class Main {
         ConfigValue<Boolean> booleanSetConfigValue = new ConfigValue<>(ConfigValue.BOOLEAN.path(), false);
         configHandler.setValue(booleanSetConfigValue);
 
-        String str = configHandler.getString(ConfigValue.STRING).value();
+        String str = configHandler.getString(ConfigValue.STRING).toString();
         Boolean bool = configHandler.getBoolean(ConfigValue.BOOLEAN).value();
         System.out.println(str);
         System.out.println(bool);
+        String str2 = configHandler.getString(ConfigUtils.createConfigValue(ConfigValue.STRING, ConfigParameter.TEST_PARAMETER.copy("Test String"))).toString();
+        System.out.println(str2);
 
     }
 }
