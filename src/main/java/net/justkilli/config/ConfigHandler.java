@@ -1,5 +1,6 @@
 package net.justkilli.config;
 
+import net.justkilli.config.values.ConfigValue;
 import org.simpleyaml.configuration.file.YamlFile;
 
 import java.io.IOException;
@@ -55,5 +56,23 @@ public class ConfigHandler implements IConfigHandler {
     @Override
     public YamlFile getConfig() {
         return config;
+    }
+
+    /**
+     * {@inheritDoc}
+     * */
+    @Override
+    public <T> void addDefaultValue(ConfigValue<T> value) throws IOException {
+        config.addDefault(value.path(), value.toString());
+        save();
+    }
+
+    /**
+     * {@inheritDoc}
+     * */
+    @Override
+    public <T> void setValue(ConfigValue<T> value) throws IOException {
+        config.set(value.path(), value.toString());
+        save();
     }
 }
