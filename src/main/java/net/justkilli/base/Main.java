@@ -1,6 +1,6 @@
 package net.justkilli.base;
 
-import net.justkilli.config.ConfigHandler;
+import net.justkilli.config.handler.YAMLConfigHandler;
 import net.justkilli.config.IConfigHandler;
 import net.justkilli.config.values.ConfigValue;
 
@@ -20,7 +20,7 @@ public class Main {
         logger.log(LogLevel.ERROR, "Hello world!");
         logger.log(LogLevel.DEBUG, "Hello world!");*/
 
-        IConfigHandler configHandler = new ConfigHandler("config.yml");
+        IConfigHandler configHandler = new YAMLConfigHandler("config.yml");
         configHandler.addDefaultValue(ConfigValue.STRING);
         configHandler.addDefaultValue(ConfigValue.INTEGER);
         configHandler.addDefaultValue(ConfigValue.BOOLEAN);

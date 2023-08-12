@@ -1,15 +1,16 @@
-package net.justkilli.config;
+package net.justkilli.config.handler;
 
+import net.justkilli.config.IConfigHandler;
 import net.justkilli.config.values.ConfigValue;
 import org.simpleyaml.configuration.file.YamlFile;
 
 import java.io.IOException;
 
-public class ConfigHandler implements IConfigHandler {
+public class YAMLConfigHandler implements IConfigHandler {
 
     private YamlFile config;
 
-    public ConfigHandler(String path) throws IOException {
+    public YAMLConfigHandler(String path) throws IOException {
         config = init(path);
     }
 
