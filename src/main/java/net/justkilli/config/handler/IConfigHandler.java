@@ -14,6 +14,7 @@ public interface IConfigHandler {
     YamlFile getConfig();
 
     <T> void addDefaultValue(ConfigValue<T> value) throws IOException;
+    <T> void setComments(ConfigValue<T> value) throws IOException;
     <T> void setValue(ConfigValue<T> value) throws IOException;
     ConfigValue<String> getString(ConfigValue<String> value);
     ConfigValue<Boolean> getBoolean(ConfigValue<Boolean> value);

@@ -1,10 +1,12 @@
 package net.justkilli.config.handler;
 
 import net.justkilli.config.ConfigUtils;
+import net.justkilli.config.values.ConfigParameter;
 import net.justkilli.config.values.ConfigValue;
 import org.simpleyaml.configuration.file.YamlFile;
 
 import java.io.IOException;
+import java.util.StringJoiner;
 
 public class YAMLConfigHandler implements IConfigHandler {
 
@@ -65,7 +67,20 @@ public class YAMLConfigHandler implements IConfigHandler {
     @Override
     public <T> void addDefaultValue(ConfigValue<T> value) throws IOException {
         config.addDefault(value.path(), value.value());
+        setComments(value);
         save();
+    }
+
+    @Override
+    public <T> void setComments(ConfigValue<T> value) throws IOException {
+        if(value.parameters().length == 0) return;
+        String header = "Parameter Options:";
+        StringJoiner joiner = new StringJoiner("\n");
+        joiner.add(header);
+        for(ConfigParameter parameter : value.parameters()) {
+            joiner.add(parameter.getParameterDescription());
+        }
+        config.setComment(value.path(), joiner.toString());
     }
 
     /**
