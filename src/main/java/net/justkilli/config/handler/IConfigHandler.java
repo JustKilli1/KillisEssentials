@@ -1,4 +1,4 @@
-package net.justkilli.config;
+package net.justkilli.config.handler;
 
 import net.justkilli.config.values.ConfigValue;
 import org.simpleyaml.configuration.file.YamlFile;
