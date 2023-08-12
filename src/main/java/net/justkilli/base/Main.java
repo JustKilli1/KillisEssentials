@@ -2,12 +2,7 @@ package net.justkilli.base;
 
 import net.justkilli.config.ConfigHandler;
 import net.justkilli.config.IConfigHandler;
-import net.justkilli.logging.ILogger;
-import net.justkilli.logging.LogLevel;
-import net.justkilli.logging.loggers.LoggerBuilder;
-import net.justkilli.logging.output.ConsolePrinter;
-import net.justkilli.logging.output.DialogPrinter;
-import net.justkilli.logging.output.FilePrinter;
+import net.justkilli.config.values.ConfigValue;
 
 import java.io.IOException;
 
@@ -26,6 +21,18 @@ public class Main {
         logger.log(LogLevel.DEBUG, "Hello world!");*/
 
         IConfigHandler configHandler = new ConfigHandler("config.yml");
+        configHandler.addDefaultValue(ConfigValue.STRING);
+        configHandler.addDefaultValue(ConfigValue.INTEGER);
+        configHandler.addDefaultValue(ConfigValue.BOOLEAN);
+        configHandler.addDefaultValue(ConfigValue.DOUBLE);
+
+        ConfigValue<Boolean> booleanSetConfigValue = new ConfigValue<>(ConfigValue.BOOLEAN.path(), false);
+        configHandler.setValue(booleanSetConfigValue);
+
+        String str = configHandler.getString(ConfigValue.STRING).value();
+        Boolean bool = configHandler.getBoolean(ConfigValue.BOOLEAN).value();
+        System.out.println(str);
+        System.out.println(bool);
 
     }
 }
