@@ -7,7 +7,6 @@ import org.simpleyaml.configuration.file.YamlFile;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.StringJoiner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -74,6 +73,9 @@ public class YAMLConfigHandler implements IConfigHandler {
         save();
     }
 
+    /**
+     * {@inheritDoc}
+     * */
     @Override
     public <T> void setComments(ConfigValue<T> value) throws IOException {
         if(value.parameters().length == 0) return;
