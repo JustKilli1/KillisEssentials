@@ -13,12 +13,11 @@ public record ConfigValue<T>(String path, T value, ConfigParameter... parameters
     }
 
     public String replaceParameter() {
-        if(!(value instanceof String)) return String.valueOf(value);
-        String value = (String) this.value;
+        if(!(value instanceof String strValue)) return String.valueOf(value);
         for(ConfigParameter parameter : parameters) {
-            value = value.replace(parameter.toString(), parameter.value());
+            strValue = strValue.replace(parameter.toString(), parameter.value());
         }
-        return value;
+        return strValue;
     }
 
 }
