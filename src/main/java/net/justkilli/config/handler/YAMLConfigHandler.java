@@ -1,5 +1,6 @@
 package net.justkilli.config.handler;
 
+import net.justkilli.config.ConfigUtils;
 import net.justkilli.config.IConfigHandler;
 import net.justkilli.config.values.ConfigValue;
 import org.simpleyaml.configuration.file.YamlFile;
@@ -83,7 +84,7 @@ public class YAMLConfigHandler implements IConfigHandler {
     @Override
     public ConfigValue<String> getString(ConfigValue<String> value) {
         String configValue = config.getString(value.path());
-        return new ConfigValue<>(value.path(), configValue);
+        return ConfigUtils.createConfigValue(value, configValue);
     }
 
     /**
@@ -92,7 +93,7 @@ public class YAMLConfigHandler implements IConfigHandler {
     @Override
     public ConfigValue<Boolean> getBoolean(ConfigValue<Boolean> value) {
         Boolean configValue = config.getBoolean(value.path());
-        return new ConfigValue<>(value.path(), configValue);
+        return ConfigUtils.createConfigValue(value, configValue);
     }
 
     /**
@@ -101,7 +102,7 @@ public class YAMLConfigHandler implements IConfigHandler {
     @Override
     public ConfigValue<Integer> getInteger(ConfigValue<Integer> value) {
         Integer configValue = config.getInt(value.path());
-        return new ConfigValue<>(value.path(), configValue);
+        return ConfigUtils.createConfigValue(value, configValue);
     }
 
     /**
@@ -110,6 +111,6 @@ public class YAMLConfigHandler implements IConfigHandler {
     @Override
     public ConfigValue<Double> getDouble(ConfigValue<Double> value) {
         Double configValue = config.getDouble(value.path());
-        return new ConfigValue<>(value.path(), configValue);
+        return ConfigUtils.createConfigValue(value, configValue);
     }
 }
