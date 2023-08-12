@@ -22,7 +22,8 @@ public class Main {
         logger.log(LogLevel.ERROR, "Hello world!");
         logger.log(LogLevel.DEBUG, "Hello world!");*/
 
-        IConfigHandler configHandler = new YAMLConfigHandler("config.yml");
+        //Config Test
+        /*IConfigHandler configHandler = new YAMLConfigHandler("config.yml");
         configHandler.addDefaultValue(ConfigValue.STRING);
         configHandler.addDefaultValue(ConfigValue.INTEGER);
         configHandler.addDefaultValue(ConfigValue.BOOLEAN);
@@ -36,7 +37,7 @@ public class Main {
         System.out.println(str);
         System.out.println(bool);
         String str2 = configHandler.getString(ConfigUtils.createConfigValue(ConfigValue.STRING, ConfigParameter.TEST_PARAMETER.copy("Test String"))).toString();
-        System.out.println(str2);
+        System.out.println(str2);*/
 
     }
 }
