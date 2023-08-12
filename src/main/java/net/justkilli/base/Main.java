@@ -5,10 +5,24 @@ import net.justkilli.config.handler.YAMLConfigHandler;
 import net.justkilli.config.handler.IConfigHandler;
 import net.justkilli.config.values.ConfigParameter;
 import net.justkilli.config.values.ConfigValue;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
 
-public class Main {
+public class Main extends JavaPlugin {
+
+    @Override
+    public void onEnable() {
+        // Plugin startup logic
+        getLogger().info("Hello world!");
+    }
+
+    @Override
+    public void onDisable() {
+        // Plugin startup logic
+        getLogger().info("Hello world!");
+    }
+
     public static void main(String[] args) throws IOException {
         System.out.println("Hello world!");
         //Logger Test
@@ -23,7 +37,7 @@ public class Main {
         logger.log(LogLevel.DEBUG, "Hello world!");*/
 
         //Config Test
-        /*IConfigHandler configHandler = new YAMLConfigHandler("config.yml");
+        IConfigHandler configHandler = new YAMLConfigHandler("config.yml");
         configHandler.addDefaultValue(ConfigValue.STRING);
         configHandler.addDefaultValue(ConfigValue.INTEGER);
         configHandler.addDefaultValue(ConfigValue.BOOLEAN);
@@ -37,7 +51,7 @@ public class Main {
         System.out.println(str);
         System.out.println(bool);
         String str2 = configHandler.getString(ConfigUtils.createConfigValue(ConfigValue.STRING, ConfigParameter.TEST_PARAMETER.copy("Test String"))).toString();
-        System.out.println(str2);*/
+        System.out.println(str2);
 
     }
 }
