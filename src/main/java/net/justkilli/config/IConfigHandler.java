@@ -9,6 +9,7 @@ public interface IConfigHandler {
     YamlFile init(String path) throws IOException;
     YamlFile create() throws IOException;
     YamlFile load() throws IOException;
+    void save() throws IOException;
     YamlFile getConfig();
 
 }

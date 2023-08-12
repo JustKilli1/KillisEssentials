@@ -45,6 +45,14 @@ public class ConfigHandler implements IConfigHandler {
      * {@inheritDoc}
      * */
     @Override
+    public void save() throws IOException {
+        config.save();
+    }
+
+    /**
+     * {@inheritDoc}
+     * */
+    @Override
     public YamlFile getConfig() {
         return config;
     }
