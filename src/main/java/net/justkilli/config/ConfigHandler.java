@@ -75,4 +75,40 @@ public class ConfigHandler implements IConfigHandler {
         config.set(value.path(), value.toString());
         save();
     }
+
+    /**
+     * {@inheritDoc}
+     * */
+    @Override
+    public ConfigValue<String> getString(ConfigValue<String> value) {
+        String configValue = config.getString(value.path());
+        return new ConfigValue<>(value.path(), configValue);
+    }
+
+    /**
+     * {@inheritDoc}
+     * */
+    @Override
+    public ConfigValue<Boolean> getBoolean(ConfigValue<Boolean> value) {
+        Boolean configValue = config.getBoolean(value.path());
+        return new ConfigValue<>(value.path(), configValue);
+    }
+
+    /**
+     * {@inheritDoc}
+     * */
+    @Override
+    public ConfigValue<Integer> getInteger(ConfigValue<Integer> value) {
+        Integer configValue = config.getInt(value.path());
+        return new ConfigValue<>(value.path(), configValue);
+    }
+
+    /**
+     * {@inheritDoc}
+     * */
+    @Override
+    public ConfigValue<Double> getDouble(ConfigValue<Double> value) {
+        Double configValue = config.getDouble(value.path());
+        return new ConfigValue<>(value.path(), configValue);
+    }
 }

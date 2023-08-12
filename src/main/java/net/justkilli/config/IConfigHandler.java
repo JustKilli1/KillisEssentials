@@ -15,4 +15,8 @@ public interface IConfigHandler {
 
     <T> void addDefaultValue(ConfigValue<T> value) throws IOException;
     <T> void setValue(ConfigValue<T> value) throws IOException;
+    ConfigValue<String> getString(ConfigValue<String> value);
+    ConfigValue<Boolean> getBoolean(ConfigValue<Boolean> value);
+    ConfigValue<Integer> getInteger(ConfigValue<Integer> value);
+    ConfigValue<Double> getDouble(ConfigValue<Double> value);
 }
