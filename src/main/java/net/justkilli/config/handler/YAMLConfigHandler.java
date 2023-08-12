@@ -64,7 +64,7 @@ public class YAMLConfigHandler implements IConfigHandler {
      * */
     @Override
     public <T> void addDefaultValue(ConfigValue<T> value) throws IOException {
-        config.addDefault(value.path(), value.toString());
+        config.addDefault(value.path(), value.value());
         save();
     }
 
