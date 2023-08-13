@@ -1,9 +1,10 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group = 'net.justkilli'
-version = '0.2.10-DEV'
+version = '0.2.11-DEV'
 
 repositories {
     mavenCentral()
@@ -17,7 +18,33 @@ dependencies {
     implementation 'com.github.Carleslc.Simple-YAML:Simple-Yaml:1.8.4'
     compileOnly("org.purpurmc.purpur:purpur-api:1.20.1-R0.1-SNAPSHOT")
 }
+java {
+    withSourcesJar()
+	withJavadocJar()
+}
 
 test {
     useJUnitPlatform()
+}
+publishing  {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/justkilli1/killisessentials"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+		    from components.java
+        }
+    }
+}
+
+wrapper {
+    gradleVersion = "7.3.3"
+    distributionType = Wrapper.DistributionType.ALL
 }
