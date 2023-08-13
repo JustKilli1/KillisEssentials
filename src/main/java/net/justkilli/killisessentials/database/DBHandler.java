@@ -70,26 +70,4 @@ public class DBHandler {
     public Optional<ResultSet> resultSetIsEmpty(ResultSet result) {
         return resultSetIsEmpty(result, false);
     }
-
-    /**
-     * Checks if the given Optional<ResultSet> is empty.
-     *
-     * @param resultOpt the Optional<ResultSet> to check for emptiness
-     * @param close a flag specifying whether to close the ResultSet after checking for emptiness
-     * @return an Optional containing the ResultSet if it is not empty, otherwise an empty Optional
-     */
-    public Optional<ResultSet> resultSetIsEmpty(Optional<ResultSet> resultOpt, boolean close) {
-        if(resultOpt.isEmpty()) return Optional.empty();
-        return resultSetIsEmpty(resultOpt.get(), close);
-    }
-
-    /**
-     * Checks if the given ResultSet is empty.
-     *
-     * @param resultOpt the ResultSet to check for emptiness
-     * @return an Optional containing the ResultSet if it is not empty, otherwise an empty Optional
-     */
-    public Optional<ResultSet> resultSetIsEmpty(Optional<ResultSet> resultOpt) {
-        return resultSetIsEmpty(resultOpt, false);
-    }
 }
