@@ -17,7 +17,7 @@ import java.sql.SQLException;
  * */
 public class DBAccessLayer {
 
-    protected static final ILogger logger = new LoggerBuilder("Database").addOutputPrinter(new ConsolePrinter()).build();
+    protected static final ILogger logger = new LoggerBuilder("KillisEssentials-Database").addOutputPrinter(new ConsolePrinter()).build();
 
     private MySQL mySql;
 
