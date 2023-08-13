@@ -13,7 +13,7 @@ import java.io.IOException;
  * It also provides methods to add default values, set comments, and modify values in the configuration file.
  * </p>
  */
-public interface IConfigHandler {
+public interface IConfigHandler extends IReloadable {
 
 
     /**
