@@ -1,4 +1,4 @@
-package net.justkilli.base;
+package net.justkilli.killisessentials.base;
 
 import net.justkilli.config.ConfigUtils;
 import net.justkilli.config.handler.YAMLConfigHandler;
@@ -11,11 +11,8 @@ import java.io.IOException;
 
 public class Main extends JavaPlugin {
 
-    @Override
-    public void onEnable() {
         // Plugin startup logic
         getLogger().info("Hello world!");
-    }
 
     @Override
     public void onDisable() {
@@ -35,8 +32,6 @@ public class Main extends JavaPlugin {
         logger.log(LogLevel.WARN, "Hello world!");
         logger.log(LogLevel.ERROR, "Hello world!");
         logger.log(LogLevel.DEBUG, "Hello world!");*/
-
-        //Config Test
         IConfigHandler configHandler = new YAMLConfigHandler("config.yml");
         configHandler.addDefaultValue(ConfigValue.STRING);
         configHandler.addDefaultValue(ConfigValue.INTEGER);

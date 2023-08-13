@@ -1,6 +1,6 @@
-package net.justkilli.config.handler;
+package net.justkilli.killisessentials.config.handler;
 
-import net.justkilli.config.values.ConfigValue;
+import net.justkilli.killisessentials.config.values.ConfigValue;
 import org.simpleyaml.configuration.file.YamlFile;
 
 import java.io.IOException;

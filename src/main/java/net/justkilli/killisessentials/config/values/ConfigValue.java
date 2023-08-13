@@ -1,4 +1,4 @@
-package net.justkilli.config.values;
+package net.justkilli.killisessentials.config.values;
 
 /**
  * Represents a configuration value.
@@ -7,10 +7,11 @@ package net.justkilli.config.values;
  */
 public record ConfigValue<T>(String path, T value, ConfigParameter... parameters) {
 
-    public static final ConfigValue<String> STRING = new ConfigValue<String>("string", String.format("Test String %s Value", ConfigParameter.TEST_PARAMETER), ConfigParameter.TEST_PARAMETER);
-    public static final ConfigValue<Boolean> BOOLEAN = new ConfigValue<Boolean>("boolean", true);
-    public static final ConfigValue<Integer> INTEGER = new ConfigValue<Integer>("integer", 1);
-    public static final ConfigValue<Double> DOUBLE = new ConfigValue<Double>("double", 1.0);
+    public static final ConfigValue<String> SQL_HOST = new ConfigValue<>("sql.host", "localhost");
+    public static final ConfigValue<String> SQL_PORT = new ConfigValue<>("sql.port", "3306");
+    public static final ConfigValue<String> SQL_USERNAME = new ConfigValue<>("sql.username", "USERNAME");
+    public static final ConfigValue<String> SQL_PASSWORD = new ConfigValue<>("sql.password", "PASSWORD");
+    public static final ConfigValue<String> SQL_DATABASE = new ConfigValue<>("sql.database", "DATABASE");
 
     @Override
     public String toString() {

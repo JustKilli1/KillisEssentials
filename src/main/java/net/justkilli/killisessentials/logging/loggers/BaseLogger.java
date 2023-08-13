@@ -1,8 +1,8 @@
-package net.justkilli.logging.loggers;
+package net.justkilli.killisessentials.logging.loggers;
 
-import net.justkilli.logging.ILogger;
-import net.justkilli.logging.LogLevel;
-import net.justkilli.logging.output.IOutputPrinter;
+import net.justkilli.killisessentials.logging.ILogger;
+import net.justkilli.killisessentials.logging.LogLevel;
+import net.justkilli.killisessentials.logging.output.IOutputPrinter;
 
 import java.util.List;
 

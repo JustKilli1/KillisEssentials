@@ -1,4 +1,4 @@
-package net.justkilli.logging;
+package net.justkilli.killisessentials.logging;
 
 /**
  * The {@code LogLevel} enum represents different levels of logging.

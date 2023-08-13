@@ -1,6 +1,6 @@
-package net.justkilli.logging.output;
+package net.justkilli.killisessentials.logging.output;
 
-import net.justkilli.logging.LogLevel;
+import net.justkilli.killisessentials.logging.LogLevel;
 
 import javax.swing.*;
 import java.util.List;

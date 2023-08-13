@@ -1,4 +1,4 @@
-package net.justkilli.config.values;
+package net.justkilli.killisessentials.config.values;
 
 /**
  * Represents a configuration parameter with its name, value, and description.

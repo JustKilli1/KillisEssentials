@@ -1,4 +1,4 @@
-package net.justkilli.logging;
+package net.justkilli.killisessentials.logging;
 
 import java.util.List;
 

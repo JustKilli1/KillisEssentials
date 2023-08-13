@@ -1,7 +1,7 @@
-package net.justkilli.config;
+package net.justkilli.killisessentials.config;
 
-import net.justkilli.config.values.ConfigParameter;
-import net.justkilli.config.values.ConfigValue;
+import net.justkilli.killisessentials.config.values.ConfigParameter;
+import net.justkilli.killisessentials.config.values.ConfigValue;
 
 /**
  * Utility class for creating and manipulating ConfigValues.

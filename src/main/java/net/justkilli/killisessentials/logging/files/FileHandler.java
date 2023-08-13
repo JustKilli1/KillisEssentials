@@ -1,4 +1,4 @@
-package net.justkilli.logging.files;
+package net.justkilli.killisessentials.logging.files;
 
 import java.io.*;
 import java.util.ArrayList;
