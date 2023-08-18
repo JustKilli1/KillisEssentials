@@ -2,6 +2,8 @@ package net.justkilli.killisessentials.database;
 
 import net.justkilli.killisessentials.logging.LogLevel;
 import net.justkilli.killisessentials.logging.ILogger;
+import net.justkilli.killisessentials.logging.loggers.LoggerBuilder;
+import net.justkilli.killisessentials.logging.output.ConsolePrinter;
 
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class DatabaseCreator {
      * Represents the logger used to log creation status.
      * This logger is used to log the status of each database creation.
      */
-    private final ILogger logger;
+    private static final ILogger logger = new LoggerBuilder("Killi's-Essentials-Database").addOutputPrinter(new ConsolePrinter()).build();
 
     /**
      * Represents a database access layer using SQL.
@@ -35,8 +37,7 @@ public class DatabaseCreator {
      * @param sql       the SQL access layer used to create databases
      * @param databases the list of databases to be created
      */
-    public DatabaseCreator(ILogger logger, DBAccessLayer sql, List<DatabaseTable> databases) {
-        this.logger = logger;
+    public DatabaseCreator(DBAccessLayer sql, List<DatabaseTable> databases) {
         this.sql = sql;
         this.databases = databases == null ? List.of() : databases;
     }
