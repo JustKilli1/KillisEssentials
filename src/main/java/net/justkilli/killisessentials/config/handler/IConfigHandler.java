@@ -23,7 +23,7 @@ public interface IConfigHandler extends IReloadable {
      * @return the initialized YamlFile object
      * @throws IOException if an I/O error occurs
      */
-    YamlFile init(String path) throws IOException;
+    YamlFile init(String path);
 
     /**
      * Creates a new YamlFile object.
@@ -31,7 +31,7 @@ public interface IConfigHandler extends IReloadable {
      * @return the created YamlFile object
      * @throws IOException if an I/O error occurs
      */
-    YamlFile create() throws IOException;
+    YamlFile create();
 
     /**
      * Loads an existing YamlFile object.
@@ -39,14 +39,14 @@ public interface IConfigHandler extends IReloadable {
      * @return the loaded YamlFile object
      * @throws IOException if an I/O error occurs
      */
-    YamlFile load() throws IOException;
+    YamlFile load();
 
     /**
      * Saves the YamlFile object.
      *
      * @throws IOException if an I/O error occurs
      */
-    void save() throws IOException;
+    void save();
 
     /**
      * Returns the YamlFile configuration object.
@@ -61,7 +61,7 @@ public interface IConfigHandler extends IReloadable {
      * @param value the {@link ConfigValue} object representing the default value to be added
      * @throws IOException if an I/O error occurs while adding the default value
      */
-    <T> void addDefaultValue(ConfigValue<T> value) throws IOException;
+    <T> void addDefaultValue(ConfigValue<T> value);
 
     /**
      * Sets the comments for a configuration value.
@@ -69,7 +69,7 @@ public interface IConfigHandler extends IReloadable {
      * @param value the {@link ConfigValue} object for which to set the comments
      * @throws IOException if an I/O error occurs while setting the comments
      */
-    <T> void setComments(ConfigValue<T> value) throws IOException;
+    <T> void setComments(ConfigValue<T> value);
 
     /**
      * Sets the value for a configuration property.
@@ -77,7 +77,7 @@ public interface IConfigHandler extends IReloadable {
      * @param value the {@link ConfigValue} object for which to set the value
      * @throws IOException if an I/O error occurs while setting the value
      */
-    <T> void setValue(ConfigValue<T> value) throws IOException;
+    <T> void setValue(ConfigValue<T> value);
 
     /**
      * Retrieves a string value from a configuration property.
