@@ -4,19 +4,17 @@ plugins {
 }
 
 group = 'net.justkilli'
-version = '0.3.7-DEV'
+version = '0.3.8-DEV'
 
 repositories {
     mavenCentral()
     maven { url 'https://jitpack.io' }
-    maven { url 'https://repo.purpurmc.org/snapshots' }
 }
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     implementation 'com.github.Carleslc.Simple-YAML:Simple-Yaml:1.8.4'
-    compileOnly("org.purpurmc.purpur:purpur-api:1.20.1-R0.1-SNAPSHOT")
 }
 java {
     withSourcesJar()

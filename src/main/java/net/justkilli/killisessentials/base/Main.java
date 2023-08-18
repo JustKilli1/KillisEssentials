@@ -2,14 +2,6 @@ package net.justkilli.killisessentials.base;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin {
+public class Main {
 
-    @Override
-    public void onEnable() {
-    }
-
-    @Override
-    public void onDisable() {
-
-    }
 }

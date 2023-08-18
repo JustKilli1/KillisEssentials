@@ -1,6 +1,0 @@
-# Parameter Options:
-# %test% -> Das ist eine Test erklÃ¤rung fÃ¼r den Parameter
-string: Test String %test% Value
-integer: 1
-boolean: 'false'
-double: 1.0
