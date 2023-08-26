@@ -5,37 +5,37 @@ import net.justkilli.killisessentials.config.handler.IConfigHandler;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class ConfigManager {
+public class ConfigManager {
 
-    private static final Map<String, IConfigHandler> CONFIG_HANDLERS = new HashMap<>();
+    private final Map<String, IConfigHandler> CONFIG_HANDLERS = new HashMap<>();
 
-    public static void registerConfigHandler(String name, IConfigHandler configHandler) {
+    public void registerConfigHandler(String name, IConfigHandler configHandler) {
         CONFIG_HANDLERS.put(name, configHandler);
     }
 
-    public static void unregisterConfigHandler(String name) {
+    public void unregisterConfigHandler(String name) {
         CONFIG_HANDLERS.remove(name);
     }
 
-    public static IConfigHandler getConfigHandler(String name) {
+    public IConfigHandler getConfigHandler(String name) {
         return CONFIG_HANDLERS.get(name);
     }
 
-    public static void reloadConfigHandler(String name) {
+    public void reloadConfigHandler(String name) {
         IConfigHandler configHandler = getConfigHandler(name);
         if(configHandler != null) configHandler.reload();
     }
 
-    public static void reloadAllConfigHandlers() {
+    public void reloadAllConfigHandlers() {
         CONFIG_HANDLERS.values().forEach(IConfigHandler::reload);
     }
 
-    public static void saveConfigHandler(String name) {
+    public void saveConfigHandler(String name) {
         IConfigHandler configHandler = getConfigHandler(name);
         if(configHandler != null) configHandler.save();
     }
 
-    public static void saveAllConfigHandlers() {
+    public void saveAllConfigHandlers() {
         CONFIG_HANDLERS.values().forEach(IConfigHandler::save);
     }
 }
