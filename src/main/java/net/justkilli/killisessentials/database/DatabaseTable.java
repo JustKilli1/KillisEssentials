@@ -120,7 +120,7 @@ public record DatabaseTable(String name, List<Column> fields) {
                 builder.append(" NOT NULL");
 
             if(defaultValue != null && !defaultValue.isEmpty())
-                builder.append(" DEFAULT ").append("'").append(defaultValue).append("'");
+                builder.append(" DEFAULT ").append(defaultValue);
 
             return builder.toString();
         }
