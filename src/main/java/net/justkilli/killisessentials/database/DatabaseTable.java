@@ -135,6 +135,7 @@ public record DatabaseTable(String name, List<Column> fields) {
         LONG_TEXT("LONGTEXT"),
         DATE("DATE"),
         TIME("TIME"),
+        TIMESTAMP("TIMESTAMP"),
         VARCHAR_1("VARCHAR(1)"),
         VARCHAR_2("VARCHAR(2)"),
         VARCHAR_3("VARCHAR(3)"),
