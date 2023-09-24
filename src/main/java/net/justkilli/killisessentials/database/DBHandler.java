@@ -33,7 +33,7 @@ public class DBHandler {
      *
      * @param result ResultSet to be closed
      */
-    private void closeResultSet(ResultSet result) {
+    public void closeResultSet(ResultSet result) {
         try {
             result.close();
         } catch (Exception ex) {
