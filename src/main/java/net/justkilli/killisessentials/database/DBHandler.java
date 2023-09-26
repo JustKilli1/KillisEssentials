@@ -48,7 +48,7 @@ public class DBHandler {
      * @param close if true, the ResultSet will be closed after checking
      * @return an Optional containing the non-empty ResultSet if it exists, otherwise an empty Optional
      */
-    public Optional<ResultSet> resultSetIsEmpty(ResultSet result, boolean close) {
+    public Optional<ResultSet> isResultSetEmpty(ResultSet result, boolean close) {
         if(result == null) return Optional.empty();
         try {
             if(!result.next()) return Optional.empty();
@@ -67,7 +67,7 @@ public class DBHandler {
      * @param result the ResultSet to check for emptiness
      * @return an Optional containing the ResultSet if it is not empty, otherwise an empty Optional
      */
-    public Optional<ResultSet> resultSetIsEmpty(ResultSet result) {
-        return resultSetIsEmpty(result, false);
+    public Optional<ResultSet> isResultSetEmpty(ResultSet result) {
+        return isResultSetEmpty(result, false);
     }
 }
